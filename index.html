@@ -7,6 +7,11 @@
     <meta name="description" content="Kellash Studio is a Tanzanian music platform for artists to record, upload, and share their songs.">
   <meta name="keywords" content="Kellash Studio, Akwiz Kellash, Tanzanian music, record studio, download songs">
   <meta name="author" content="Akwiz Kellash">
+<meta property="og:title" content="KELLASH STUDIO">
+<meta property="og:description" content="Kellash Studio is a Tanzanian music platform for artists to record, upload, and share their songs.">
+<meta property="og:image" content="https://kellashstudiotanzania.netlify.app/images/logo kellassh NN 2.jpg">
+<meta property="og:url" content="https://kellashstudiotanzania.netlify.app/index.html">
+<meta property="og:type" content="music.song">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/92d70a2fd8.js"></script>
 </head>
@@ -67,15 +72,27 @@
     }
 </style>
 <body>
-
- <header>
+<header>
     <nav class="navbar">
-      <div class="logo">KELLASH STUDIO</div>
+      <div class="logo"> KELLASH STUDIO</div>
       <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="updates.html">Updates</a></li>
+      <li><a href="index.html">Home</a></li> <br>
+       <li><a href="services.html">Services</a></li> <br>
+         <li><a href="updates.html">Updates</a></li> <br>
+         <li><a href="audio.html">Audio</a></li> <br>
+          <li><a href="">video</a></li> <br>
+         
+      <li><a href="">Singeli music</a></li> <br>
+      <li><a href="">Album/EP</a></li> <br>
+         <li><a href="">Hip-hop/Rap</a></li> <br>
+      
+               
+                
                 <li><a href="contact.html">Contact us</a></li>
+  
+   
+  
+  
             </ul>
       <!-- burger menu -->
       <div class="burger">
@@ -101,14 +118,24 @@
 
  <div id="results"></div>
   </div>
-
+</section>
+  <section class="categories">
+  <a href="audio.html">Audio</a>
+  <a href="#">Video</a>
+  <a href="#">Singeli music</a>
+  <a href="#">Album/EP</a>
+  
+  <a href="">Hip-hop/Rap</a>
+</section>
   </center>
   <!-- Hero Section -->
   <section class="hero">
       <h1 style="font-size: 27px;">SIKILIZA NA PAKUA NYIMBO ONLINE!</h1>
+      
       <a href="services.html" class="btn">Tazama Huduma Zetu</a>
       
   </section>
+  
   <center>
     <div class="cardyanyimbo" style="border:1px solid #ccc; padding:15px; width:300px; text-align:center; margin:10px; border-radius:10px;">
     <!-- Picha ya track -->
@@ -216,88 +243,11 @@
       <p>&copy; 2021-2025 KELLASH STUDIO. All rights reserved.</p>
   </footer>
 
-<!-- ✅ JavaScript -->
-  <script>
-    const burger = document.querySelector('.burger');
-    const nav = document.querySelector('.nav-links');
+<!-- Fuse.js Library -->
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
 
-    burger.addEventListener('click', () => {
-      // Toggle both burger and nav visibility
-      nav.classList.toggle('nav-active');
-      burger.classList.toggle('toggle');
-    });
-  </script>
-
-
-
-<script>
-const form = document.getElementById('searchForm');
-const loader = document.getElementById('loader');
-
-form.addEventListener('submit', function(e) {
-  e.preventDefault(); // prevent default submit
-  loader.style.display = 'flex'; // show loader
-
-  setTimeout(() => {
-    form.submit(); // submit after 3 seconds
-  }, 3000); // 3000ms = 3 seconds
-});
-</script>
-
- <!-- Fuse.js Library -->
-  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
-  <script>
-    // 🔹 Orodha ya kurasa za website yako
-    const pages = [
-      { title: "Daino minoma ft Benito Mc- Akili ya ndocc", url: "daino.html", content: "" },
-      { title: "Fammi Africa-Umejaa", url: "fammi.html", content: "" },
-      { title: "EP I Fanu Benks - Afro centric", url: "fanu.html", content: "" },
-      { title: "ctg harmanto- Enjo", url: "juma.html", content: "" },
-      { title: "kim voice-waambie", url: "kim.html", content: "" },
-       { title: "Fessy Melody", url: "melody.html", content: "" },
-    ];
-
-    // 🔹 Search configuration
-    const fuse = new Fuse(pages, {
-      keys: ["title", "content"],
-      threshold: 0.3
-    });
-
-    const searchInput = document.getElementById("searchInput");
-    const resultsDiv = document.getElementById("results");
-
-    // Highlight text
-    function highlight(text, term) {
-      const regex = new RegExp(`(${term})`, "gi");
-      return text.replace(regex, "<span class='highlight'>$1</span>");
-    }
-
-    // On typing
-    searchInput.addEventListener("input", () => {
-      const term = searchInput.value.trim();
-      resultsDiv.innerHTML = "";
-
-      if (term === "") return;
-
-      const results = fuse.search(term);
-
-      if (results.length === 0) {
-        resultsDiv.innerHTML = "<p>Hakuna matokeo yaliyopatikana </p>";
-        return;
-      }
-
-      results.forEach(r => {
-        const item = r.item;
-        const html = `
-          <div class="result">
-            <a href="${item.url}">${highlight(item.title, term)}</a>
-            <p>${highlight(item.content, term)}</p>
-          </div>
-        `;
-        resultsDiv.innerHTML += html;
-      });
-    });
-  </script>
+<!-- File yako ya JavaScript -->
+<script src="main.js"></script>
 
 </body>
 </html>
